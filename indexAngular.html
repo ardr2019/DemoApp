@@ -44,7 +44,7 @@
             <div class="panel panel-primary" ng-repeat="emp in resdata | filter:SearchList">
                 <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{$index}}" aria-expanded="true" aria-controls="collapseOne">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{$index}}" aria-expanded="true" aria-controls="collapseOne" ng-click="empdetails(emp)">
                             {{emp.employee_name}}
                         </a>
                     </h4>
@@ -129,6 +129,9 @@
                 else {
                     dm.loginfalse = true;
                 }
+            }
+            dm.empdetails = function (emp) {
+                console.log(emp);
             }
         });
     </script>
